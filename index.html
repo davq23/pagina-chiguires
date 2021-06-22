@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Secciones</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="w-100 relative flex-col px-0">
+        <nav class="w-100 flex-row bg-pale-blue jusify-content-between px-0">
+            <ul class="flex-row w-100 p-005 text-white">
+                <li id="login">Login</li>
+                <li>Sign up</li>
+            </ul>
+        </nav>
+        <h1 class="text-white absolute top-25 left-10 top-yet" id="logo">Chigüires bellos</h1>
+        <img class="w-100" src="assets/header-chiguire-2.jpg" alt="Chiguire header">
+        
+    </header>
+    <nav class="w-100 flex-col bg-green-normal" id="navbar">
+        <div class="flex-row flex-wrap w-100 h-100 py-05 justify-content-center dropdown-nav" 
+            data-target="#nav-main" id="dropdown-nav">
+            ABRIR
+        </div>
+        <ul class="flex-row flex-wrap w-100 h-100 justify-content-center dropdown-content" id="nav-main">
+            <li class="px-1 w-15 py-05"><a href="index.html">Home</a></li>
+            <li class="px-1 w-15 py-05"><a href="historias.html">Historias</a></li>
+            <li class="px-1 w-15 py-05"><a href="comportamiento.html" class="w-100">Comportamiento</a></li>
+            <li class="px-1 w-15 py-05">Opiniones</li>
+            <li class="px-1 w-15 py-05">Contacto</li>
+        </ul>
+    </nav>
+    <div class="mt-1" id="article-body">
+        <article class="mx-5 p-1 bg-white border border-gray">
+            <h1>¿Qué es un chigüire?</h1>
+            <p class="mt-1rem">
+                Hydrochoerus hydrochaeris, llamado comúnmente capibara, carpincho o chigüire es un roedor de la familia de los cávidos. Es el roedor viviente de mayor tamaño y peso del mundo. Vive en la zona terrestre de los bosques y sabanas tropicales hasta casi los 2.000 m s.n.m. Está relacionado con los agutíes, las chinchillas, los coipos y los cobayos
+            </p>
+            <p>
+                Tiene un cuerpo pesado en forma de barril y una cabeza pequeña, con un pelaje pardo rojizo en la parte superior del cuerpo que se vuelve pardo amarillo. En su parte inferior suele encontrarse pelaje con puntos o petequias en el lomo. Puede crecer hasta 1,30 m de largo y llegar a pesar 65 kg. Presenta pies ligeramente palmeados y al igual que los puercos carece de cola y tiene 20 dientes. Sus patas posteriores son algo más largas que las anteriores, y los hocicos son romos, con ojos, narinas y orejas en la parte superior de la cabeza. Las hembras son un poco más pesadas que los machos.
+            </p>
+            <p>Fuente: <a href="https://es.wikipedia.org/wiki/Hydrochoerus_hydrochaeris" target="_blank">Wikipedia</a> (Revisado el 21/06/2021 a las 19:22)</p>
+        </article>
+        <article class="mx-5 p-1 mt-1rem bg-white border border-gray">
+            <h1>¿Por qué esta página existe?</h1>
+            <p class="mt-1rem">
+               Para pasar la materia (y también porque los chigüires son bellos).
+            </p>
+        </article>
+    </div>
+    <footer class="text-center w-100 mt-1rem mb-05rem font-08rem flex-col justify-content-center">
+        <p class="text-center">Creado por David Quintero</p>
+        <p class="text-center">Junio de 2021</p>
+    </footer>
+    <div class="absolute bg-pale-blue hidden p-1" id="dropdown-login">
+        <form class="flex-col p-005 justify-content-around" id="login-form">
+            <label for="usuario">Usuario</label>
+            <input type="text" name="usuario" placeholder="Usuario" class="input-control mt-1">
+            <label for="password" class="mt-1">Password</label>
+            <input type="password" name="password" placeholder="Contraseña" class="input-control mt-1">
+            <button class="mt-1rem py-05">Enviar</button>
+        </form>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

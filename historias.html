@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Secciones</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="w-100 relative flex-col px-0">
+        <nav class="w-100 flex-row bg-pale-blue jusify-content-between px-0">
+            <ul class="flex-row w-100 p-005 text-white">
+                <li id="login">Login</li>
+                <li>Sign up</li>
+            </ul>
+            
+        </nav>
+        <h1 class="text-white absolute top-25 left-10 top-yet" id="logo">Chigüires bellos</h1>
+        <img class="w-100" src="assets/header-chiguire-2.jpg" alt="Chiguire header">
+    </header>
+    <nav class="w-100 flex-col bg-green-normal" id="navbar">
+        <div class="flex-row flex-wrap w-100 h-100 py-05 justify-content-center dropdown-nav" 
+            data-target="#nav-main" id="dropdown-nav">
+            ABRIR
+        </div>
+        <ul class="flex-row flex-wrap w-100 h-100 justify-content-center dropdown-content" id="nav-main">
+            <li class="px-1 w-15 py-05"><a href="index.html" class="w-100">Home</a></li>
+            <li class="px-1 w-15 py-05"><a href="historias.html" class="w-100">Historias</a></li>
+            <li class="px-1 w-15 py-05"><a href="comportamiento.html" class="w-100">Comportamiento</a></li>
+            <li class="px-1 w-15 py-05">Opiniones</li>
+            <li class="px-1 w-15 py-05">Contacto</li>
+        </ul>
+    </nav>
+    <div class="mt-1" id="article-body">
+        <article class="mx-5 p-1 bg-white border border-gray">
+            <h1>Historia #1. El chigüire toca joropo</h1>
+            <p class="mt-1rem">
+                Había una vez un chigüire que, de todas las cosas que podía hacer con su vida, decidió montar un conjunto de llanero
+            </p>
+            <br>
+            <p>
+                Sin embargo, el conjunto se terminó separando porque se les rompió el arpa y esa vaina es carísima.
+            </p>
+            <br>
+            <p>
+                Fin
+            </p>
+        </article>
+        <article class="mx-5 p-1 bg-white border border-gray">
+            <h1>Historia #2. El chigüire toca gaita</h1>
+            <p class="mt-1rem">
+                Había una vez un chigüire que, de todas las cosas que podía hacer con su vida, decidió montar un conjunto de gaita.
+            </p>
+            <br>
+            <p>
+                Sin embargo, el conjunto se terminó separando porque los arrestó el SEBIN.
+            </p>
+            <br>
+            <p>
+                Fin
+            </p>
+        </article>
+        <article class="mx-5 p-1 bg-white border border-gray">
+            <h1>Historia #3. El chigüire se compra una bicicleta</h1>
+            <p class="mt-1rem">
+                Había una vez un chigüire que, de todas las cosas que podía hacer con su vida, decidió comprarse una bicicleta de montaña con una plata que Dios sabe dónde habrá conseguido.
+            </p>
+            <br>
+            <p>
+                Sin embargo, la dejó botada en el patio al no poder manejarla bien.
+            </p>
+            <br>
+            <p>
+                Fin
+            </p>
+        </article>
+        <article class="mx-5 p-1 bg-white border border-gray">
+            <h1>Historia #4. El chigüire se sienta a pensar</h1>
+            <p class="mt-1rem">
+                Había una vez un chigüire que, de todas las cosas que podía hacer con su vida, decidió sentarse a pensar.
+            </p>
+            <br>
+            <p>
+                Sin embargo, dejó de hacerlo rápidamente porque realmente no tenía mucho en su cabeza.
+            </p>
+            <br>
+            <p>
+                Fin
+            </p>
+        </article>
+        <article class="mx-5 p-1 bg-white border border-gray">
+            <h1>Historia #5. El chigüire quiere echarse los palos con los panas</h1>
+            <p class="mt-1rem">
+                Había una vez un chigüire que, de todas las cosas que podía hacer con su vida, decidió decirles a sus amigos chigüires que fueran para la licorería a echarse unos palos.
+            </p>
+            <br>
+            <p>
+                Sin embargo, recordó que no bebe y se quedó chigüireando.
+            </p>
+            <br>
+            <p>
+                Fin
+            </p>
+        </article>
+      
+    </div>
+    <footer class="text-center w-100 mt-1rem mb-05rem font-08rem flex-col justify-content-center">
+        <p class="text-center">Creado por David Quintero</p>
+        <p class="text-center">Junio de 2021</p>
+    </footer>
+    <div class="absolute bg-pale-blue hidden p-1" id="dropdown-login">
+        <form class="flex-col p-005 justify-content-around" id="login-form">
+            <label for="usuario">Usuario</label>
+            <input type="text" name="usuario" placeholder="Usuario" class="input-control mt-1">
+            <label for="password" class="mt-1">Password</label>
+            <input type="password" name="password" placeholder="Contraseña" class="input-control mt-1">
+            <button class="mt-1rem py-05">Enviar</button>
+        </form>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
