@@ -6,6 +6,7 @@
 * {
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 #nav-main > li > a {
@@ -17,12 +18,12 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#dropdown-login.active {
+#dropdown-login.active, #dropdown-signup.active {
     opacity: 1;
     transition: all 0.2s;
 }
 
-#dropdown-login {
+#dropdown-login, #dropdown-signup {
     opacity: 0;
     transition: all 0.2s;
 }
@@ -235,6 +236,10 @@ p {
 }
 
 @media(min-width: 900px) {
+    #logo {
+        font-size: 50px;
+    }
+
     #nav-main > li > a {
         display: inline-block;     
         position: relative;    

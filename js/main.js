@@ -2,6 +2,16 @@ document.addEventListener('readystatechange', function (event) {
     if (document.readyState === 'complete') {
         var dropdownLogin = new David.Components.Dropdown(document.getElementById('login'),
             document.getElementById('dropdown-login'));
+
+        var dropdownSignup = new David.Components.Dropdown(document.getElementById('signup'),
+            document.getElementById('dropdown-signup'));
+
+        if (document.getElementById('span-login')) {
+            document.getElementById('span-login').addEventListener('click', function (event) {
+                dropdownLogin.show();
+            });
+        }
+
         document.getElementById('logo').classList.remove('top-yet');
 
         function activeContent(event) {
@@ -25,7 +35,15 @@ document.getElementById('login-form').addEventListener('submit', function (event
     var credenciales = David.Utils.formToObject(this);
 
     console.log(credenciales);
-})
+});
+
+document.getElementById('signup-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    var credenciales = David.Utils.formToObject(this);
+
+    console.log(credenciales);
+});
 
 var David = {
     Utils: {
@@ -92,12 +110,27 @@ David.Components.Dropdown.prototype.toggle = function () {
     this._element.style.left = this._trigger.offsetLeft + 'px';
 
     if (this._element.classList.contains('hidden')) {
-        this._element.classList.remove('hidden');
-        this._element.classList.add('active');
+        this.show();
     } else {
         this._element.classList.remove('active');
         setTimeout(function () {
             self._element.classList.add('hidden');
         }, 200)
     }
+};
+
+David.Components.Dropdown.prototype.show = function() {
+    this._element.classList.remove('hidden');
+
+    if (this._element.offsetWidth + this._trigger.offsetLeft > window.outerWidth) {
+        this._element.style.left = this._trigger.offsetLeft + this._element.offsetWidth - window.outerWidth
+         + 'px';
+
+    }
+
+    this._element.classList.add('active');
+}
+
+David.Components.Dropdown.prototype.isHidden = function () {
+    return this._element.classList.contains('hidden');
 };

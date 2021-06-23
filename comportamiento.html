@@ -12,11 +12,12 @@
         <nav class="w-100 flex-row bg-pale-blue jusify-content-between px-0">
             <ul class="flex-row w-100 p-005 text-white">
                 <li id="login">Login</li>
-                <li>Sign up</li>
+                <li id="signup">Sign up</li>
             </ul>
         </nav>
         <h1 class="text-white absolute top-25 left-10 top-yet" id="logo">Chigüires bellos</h1>
         <img class="w-100" src="assets/header-chiguire-2.jpg" alt="Chiguire header">
+        <link rel="icon" href="favicon.ico" type="image/ico" sizes="16x16">
     </header>
     <nav class="w-100 flex-col bg-green-normal" id="navbar">
         <div class="flex-row flex-wrap w-100 h-100 py-05 justify-content-center dropdown-nav" 
@@ -27,7 +28,7 @@
             <li class="px-1 w-15 py-05"><a href="index.html" class="w-100">Home</a></li>
             <li class="px-1 w-15 py-05"><a href="historias.html" class="w-100">Historias</a></li>
             <li class="px-1 w-15 py-05"><a href="comportamiento.html" class="w-100">Comportamiento</a></li>
-            <li class="px-1 w-15 py-05">Opiniones</li>
+            <li class="px-1 w-15 py-05"><a href="opiniones.html" class="w-100">Opiniones</a></li>
             <li class="px-1 w-15 py-05">Contacto</li>
         </ul>
     </nav>
@@ -35,31 +36,13 @@
         <article class="mx-5 p-1 bg-white border border-gray">
             <h1>¿Cómo se comportan los chigüires?</h1>
             <p class="mt-1rem">
-                Los carpinchos son animales principalmente crepusculares. Pasan el calor del día en agujeros en el barro o dentro de las aguas.​ Para dormir se esconden entre una vegetación espesa; no les hace falta ninguna cueva. En cambio, en las zonas donde son molestados por las actividades humanas, cambian y adoptan un estilo de vida nocturno.
-                Si un carpincho advierte peligro, avisa a los demás con un ladrido corto, y de inmediato todos corren trotando con una velocidad equiparable a la de un caballo a fin de ponerse a salvo en el agua. Pueden bucear y permanecer bajo el agua hasta cinco minutos, y son capaces de nadar con todo el cuerpo sumergido excepto las orejas, los orificios nasales y los ojos
+                Los chigüires son animales principalmente crepusculares. Pasan el calor del día en agujeros en el barro o dentro de las aguas.​ Para dormir se esconden entre una vegetación espesa; no les hace falta ninguna cueva. En cambio, en las zonas donde son molestados por las actividades humanas, cambian y adoptan un estilo de vida nocturno.
+                Si un chigüire advierte peligro, avisa a los demás con un ladrido corto, y de inmediato todos corren trotando con una velocidad equiparable a la de un caballo a fin de ponerse a salvo en el agua. Pueden bucear y permanecer bajo el agua hasta cinco minutos, y son capaces de nadar con todo el cuerpo sumergido excepto las orejas, los orificios nasales y los ojos
             </p>
-            <br>
-            <p>
-                Sin embargo, el conjunto se terminó separando porque se les rompió el arpa y esa vaina es carísima.
+            <p class="text-center mt-1rem">
+                <img src="assets/capypiccr.jpg" alt="Chigüires chigüireando">
             </p>
-            <br>
-            <p>
-                Fin
-            </p>
-        </article>
-        <article class="mx-5 p-1 bg-white border border-gray">
-            <h1>Historia #2. El chigüire toca gaita</h1>
-            <p class="mt-1rem">
-                Había una vez un chigüire que, de todas las cosas que podía hacer con su vida, decidió montar un conjunto de gaita.
-            </p>
-            <br>
-            <p>
-                Sin embargo, el conjunto se terminó separando porque los arrestó el SEBIN.
-            </p>
-            <br>
-            <p>
-                Fin
-            </p>
+            <p>Fuente: <a href="https://es.wikipedia.org/wiki/Hydrochoerus_hydrochaeris" target="_blank">Wikipedia</a> (Revisado el 22/06/2021 a las 20:37)</p>
         </article>
     </div>
     <footer class="text-center w-100 mt-1rem mb-05rem font-08rem flex-col justify-content-center">
@@ -68,6 +51,15 @@
     </footer>
     <div class="absolute bg-pale-blue hidden p-1" id="dropdown-login">
         <form class="flex-col p-005 justify-content-around" id="login-form">
+            <label for="usuario">Usuario</label>
+            <input type="text" name="usuario" placeholder="Usuario" class="input-control mt-1">
+            <label for="password" class="mt-1">Password</label>
+            <input type="password" name="password" placeholder="Contraseña" class="input-control mt-1">
+            <button class="mt-1rem py-05">Enviar</button>
+        </form>
+    </div>
+    <div class="absolute bg-pale-blue hidden p-1" id="dropdown-signup">
+        <form class="flex-col p-005 justify-content-around" id="signup-form">
             <label for="usuario">Usuario</label>
             <input type="text" name="usuario" placeholder="Usuario" class="input-control mt-1">
             <label for="password" class="mt-1">Password</label>
