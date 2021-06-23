@@ -106,9 +106,7 @@ David.Utils.inherit(David.Components.Dropdown, David.Components.Component);
 David.Components.Dropdown.prototype.toggle = function () {
     var self = this;
 
-    this._element.style.top = this._trigger.clientHeight + this._trigger.offsetTop + 'px';
-    this._element.style.left = this._trigger.offsetLeft + 'px';
-
+  
     if (this._element.classList.contains('hidden')) {
         this.show();
     } else {
@@ -120,6 +118,9 @@ David.Components.Dropdown.prototype.toggle = function () {
 };
 
 David.Components.Dropdown.prototype.show = function() {
+    this._element.style.top = this._trigger.clientHeight + this._trigger.offsetTop + 'px';
+    this._element.style.left = this._trigger.offsetLeft + 'px';
+
     this._element.classList.remove('hidden');
 
     if (this._element.offsetWidth + this._trigger.offsetLeft > window.outerWidth) {
