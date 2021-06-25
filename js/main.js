@@ -8,7 +8,10 @@ document.addEventListener('readystatechange', function (event) {
 
         if (document.getElementById('span-login')) {
             document.getElementById('span-login').addEventListener('click', function (event) {
+                event.stopPropagation();
                 dropdownLogin.show();
+            }, {
+                capture: true,
             });
         }
 
@@ -27,6 +30,15 @@ document.addEventListener('readystatechange', function (event) {
     } else if (document.readyState === 'interactive') {
         
     }
+});
+
+document.addEventListener('click', function (event) {
+    David.Components.dropdownList.forEach(function (dropdown) {
+        if (event.target !== dropdown.getTrigger() && 
+            !David.Utils.isChild(dropdown.getElement(), event.target)) {
+            dropdown.hide();
+        }
+    });
 });
 
 document.getElementById('login-form').addEventListener('submit', function (event) {
@@ -58,6 +70,38 @@ var David = {
             derived.prototype.constructor = derived;
         },
 
+        /**
+         * Verifica si un elemento dado es padre de otro elemento
+         * 
+         * @param {HTMLElement} parentElement 
+         * @param {HTMLElement} childElement 
+         * @returns 
+         */
+        isChild: function (parentElement, childElement) {
+            if (childElement === parentElement) {
+                return true;
+            }
+
+            var element = childElement.parentElement;
+
+            while (element !== parentElement.parentElement || element !== document.body) {
+                element = element.parentElement;
+
+                if (element === parentElement) {
+                    return true;
+                }
+            }
+
+            return false;
+        },
+
+        /**
+         * Convierte un formulario en objeto de JS,
+         * a través de relaciones {input[name]: input[value], ...}
+         * 
+         * @param {HTMLFormElement} form 
+         * @returns 
+         */
         formToObject: function(form) {
             if (!(form instanceof HTMLFormElement)) {
                 throw 'Parámetro debe ser un formulario';
@@ -74,6 +118,13 @@ var David = {
     },
 
     Components: {
+        /**
+         * Arreglo con todos los dropdowns
+         * 
+         * @type {Array}
+         */
+        dropdownList: [],
+
         /**
          * 
          * @param {HTMLElement} element 
@@ -94,26 +145,40 @@ var David = {
             var self = this;
 
             this._trigger.addEventListener('click', function (event) {
-                console.log(event);
                 self.toggle();
             });
+
+            David.Components.dropdownList.push(this);
         }
     }
 }
 
+David.Components.Component.prototype.getElement = function () {
+    return this._element;
+}
+
 David.Utils.inherit(David.Components.Dropdown, David.Components.Component);
 
-David.Components.Dropdown.prototype.toggle = function () {
-    var self = this;
 
-  
+David.Components.Dropdown.prototype.getTrigger = function () {
+    return this._trigger;
+}
+
+David.Components.Dropdown.prototype.hide = function () {
+    var self = this;
+    
+    this._element.classList.remove('active');
+
+    setTimeout(function () {
+        self._element.classList.add('hidden');
+    }, 200)
+};
+
+David.Components.Dropdown.prototype.toggle = function () {
     if (this._element.classList.contains('hidden')) {
         this.show();
     } else {
-        this._element.classList.remove('active');
-        setTimeout(function () {
-            self._element.classList.add('hidden');
-        }, 200)
+        this.hide();
     }
 };
 
