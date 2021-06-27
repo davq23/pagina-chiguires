@@ -82,6 +82,10 @@ textarea {
     position: absolute;
 }
 
+.align-center {
+    align-items: center;
+}
+
 
 .bg-green-normal {
     background-color: rgb(31, 138, 31);
@@ -235,12 +239,12 @@ textarea {
     color: white;
 }
 
-.w-10 {
-    width: 10;
+.w-25 {
+    width: 25%;
 }
 
-.w-15 {
-    width: 15;
+.w-50 {
+    width: 50%;
 }
 
 .w-100 {
@@ -272,6 +276,10 @@ textarea {
         z-index: 1;    
         padding: 1em; 
         margin: -1em;
+    }
+
+    #chiguires-apareandose {
+        width: 25%;
     }
 
     .dropdown-nav {
