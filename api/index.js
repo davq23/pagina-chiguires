@@ -1,23 +1,41 @@
 import express from 'express';
-import { newOpinion } from './controllers/OpinionController';
-import { login, newUser } from './controllers/UserController';
-import jwtMiddleware from './middlewares/JWTMiddleware';
+import { newOpinion, allOpinions } from './controllers/opinion.controllers.js';
+import { login, newUser } from './controllers/user.controllers.js';
+import jwtMiddleware from './middlewares/JWTMiddleware.js';
 
 const app = express();
 
 app.use(express.json());
 
-app.post('users/new', jwtMiddleware({
+app.use((err, req, res, next) => {
+    if (err instanceof SyntaxError) {
+        console.error(err);
+
+        return res.sendStatus(400);
+    }
+    
+    next();
+});
+
+app.post('/users/new', jwtMiddleware({
     noAuth: true
 }, newUser));
 
-app.post('users/account/login', jwtMiddleware({
+
+app.post('/users/login', jwtMiddleware({
     noAuth: true
 }, login));
 
-app.get('opinions/new', jwtMiddleware({
+app.post('/opinions/new', jwtMiddleware({
     noAuth: false,
-}), newOpinion);
+}, newOpinion));
 
+app.get('/opinions/all', jwtMiddleware({
+    noAuth: false,
+}, allOpinions));
 
-app.listen(8080);
+import './database/database.js'
+
+app.listen(8080, 'localhost', () => {
+    console.log('aaa');
+});

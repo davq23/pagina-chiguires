@@ -1,28 +1,35 @@
 import jwt from "jsonwebtoken";
 
-const jwtAuthMiddleware = (options) => {
-    return function (req, res, next) {
+const jwtAuthMiddleware = (options, next) => {
+    return function (req, res) {
         const bearer = req.header('Bearer');
 
-        if (bearer.length !== 1 && !options.noAuth) {
+        if (typeof(bearer) === 'undefined' && options.noAuth) {
+            return next(req, res);
+        }
+
+        if (!bearer && !options.noAuth && !options.noAuth) {
             res.status(401).send({
                 message: 'Unauthorized'
             });
+
+            return;
         }
 
         try {
-            const payLoad = jwt.verify(bearer[0], process.env.SECRET_TOKEN);
+            const payLoad = jwt.verify(bearer, process.env.SECRET_KEY);
 
-            req.userID = payLoad.userID;
-            req.userName = payLoad.userName;
+            req.userID = payLoad.data;
             
-            next();
+            return next(req, res);
         } catch (err) {
-            if (!options.noAuth) {
-                next();
+            if (options.noAuth) {
+                return next(req, res);
             }
         }
-
+        return res.status(401).send({
+            'message': 'Unauthorized'
+        });
     }
 };
 
