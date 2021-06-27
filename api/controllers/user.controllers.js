@@ -75,8 +75,6 @@ const login = async (req, res) => {
     return res.send(jwt.sign({'data': user._id, exp: Math.floor(Date.now() / 1000) + (60 * 60),}, process.env.SECRET_KEY));
 }
 
-
-
 export {
     newUser,
     login,
