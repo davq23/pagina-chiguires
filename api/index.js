@@ -40,4 +40,6 @@ app.get('/opinions/all', jwtMiddleware({
 
 import './database/database.js'
 
-app.listen();
+const listener = app.listen(() => {
+    console.log(`Listening to port ${listener.address().port}`)
+});
