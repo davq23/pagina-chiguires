@@ -17,6 +17,10 @@ app.use((err, req, res, next) => {
     next();
 });
 
+app.get('test', (req, res) => {
+    return res.send('HOLAAAAA');
+});
+
 app.post('/users/new', jwtMiddleware({
     noAuth: true
 }, newUser));
@@ -36,6 +40,6 @@ app.get('/opinions/all', jwtMiddleware({
 
 import './database/database.js'
 
-app.listen(8080, 'localhost', () => {
-    console.log('aaa');
+app.listen(8080, () => {
+    console.log('Server started');
 });
