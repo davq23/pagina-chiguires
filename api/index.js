@@ -40,6 +40,4 @@ app.get('/opinions/all', jwtMiddleware({
 
 import './database/database.js'
 
-app.listen(8080, () => {
-    console.log('Server started');
-});
+app.listen();
